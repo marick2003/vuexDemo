@@ -5,12 +5,15 @@
         <button @click='increment'>++</button>
         <button @click='decrement'>--</button>
         <childTest></childTest>
+        <button @click='animto'>animto</button>
+        <div id="box"></div>
     </div>
 </template>
 <script>
 ///如不用 import this.$
 //import store from '../store/index';
 import childTest from './child-test';
+import anime from 'animejs';
 export default {
 
     
@@ -32,11 +35,32 @@ export default {
         },
         decrement () {
             this.$store.commit('decrement')
+        },
+        animto(){
+                anime({
+                            targets: '#box',
+                            translateX: [
+                                { value: 100, duration: 1200 },
+                                { value: 200, duration: 800 }
+                            ],
+                            rotate: '1turn',
+                            backgroundColor: '#FFFaaa',
+                            duration: 2000,
+                            loop: true
+                        })
+
         }
     },
-    created(){
+    ////intro
+    //https://css-tricks.com/intro-to-vue-3-vue-cli-lifecycle-hooks/
+    mounted(){
+        this.animto();
 
+    },
+    created(){
+        console.log("sdasd");
         //this.pp=this.$store.state.count;
+       this.animto();
     }
     ,
     components:{
@@ -47,5 +71,12 @@ export default {
 </script>
 
 <style scoped>
+#box{
 
+    position: relative;
+    width: 100px;
+    height: 100px;
+    background-color: aquamarine;
+
+}
 </style>
