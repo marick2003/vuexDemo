@@ -24,3 +24,7 @@ export default {
   margin-top: 60px;
 }
 </style>
+<style lang="scss">
+  @import "./assets/all";
+</style>
+

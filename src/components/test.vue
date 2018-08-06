@@ -4,6 +4,7 @@
         <p>pp目前是: {{ count }}</p>
         <button @click='increment'>++</button>
         <button @click='decrement'>--</button>
+        <input type="text" v-model="txt">
         <childTest></childTest>
         <button @click='animto'>animto</button>
         <div id="box"></div>
@@ -19,8 +20,8 @@ export default {
     
     data(){
         return {
-            
             pp: '',
+            txt: '',
         }
 
     },
