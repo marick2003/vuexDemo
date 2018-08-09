@@ -5,8 +5,9 @@
         <button @click='increment'>++</button>
         <button @click='decrement'>--</button>
         <input type="text" v-model="txt">
-        <childTest></childTest>
         <button @click='animto'>animto</button>
+        <childTest></childTest>
+       
         <div id="box"></div>
     </div>
 </template>
